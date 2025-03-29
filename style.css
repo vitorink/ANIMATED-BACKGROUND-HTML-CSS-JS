@@ -1,0 +1,53 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#282c33;
+    z-index: -1; /* Fica atrás do conteúdo */
+}
+
+.shape {
+    position: absolute;
+    opacity: 0;
+    animation: appearDisappear 5s infinite;
+    transition: transform 1s;
+}
+
+.square {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #bd52de; /* Linha roxa escura */
+}
+
+@keyframes appearDisappear {
+    0% {
+        opacity: 0;
+        transform: scale(0) translateY(0);
+    }
+    25% {
+        opacity: 1;
+        transform: scale(1) translateY(-20px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    75% {
+        opacity: 0;
+        transform: scale(0) translateY(20px);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0) translateY(0);
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding-top: 200px;
+    color: white;
+}
